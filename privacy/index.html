@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Underlye · Privacy, Terms, Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* VOICE: calm, plain, trustworthy; a reading app's legal page
+   IDEA: a well-set page of a book: one column, generous margins
+   PICTURE: none needed; the text is the object
+   COLOUR and TYPE: the app's graphite and warm off-white, Jost titles, Inter text
+   LAYOUT: top bar with language and section tabs, one readable column */
+:root{color-scheme:light dark;--bg:light-dark(#F6F2EC,#110F0D);--s1:light-dark(#ECE6DD,#1B1815);--ink:light-dark(#1A1714,#F2EDE6);--ink2:light-dark(#5B554E,#A9A39B);--ink3:light-dark(#8A847C,#756F68);--line:light-dark(#DDD5CA,#262220)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,sans-serif;overflow-x:clip}
+header{position:sticky;top:0;background:var(--bg);border-bottom:1px solid var(--line);z-index:2}
+.bar{max-width:760px;margin:0 auto;padding:14px 20px;display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between}
+.brand{font:500 22px/1 Jost,sans-serif;letter-spacing:-.01em}
+nav{display:flex;flex-wrap:wrap;gap:6px}
+nav button{font:500 14px Inter,sans-serif;color:var(--ink2);background:none;border:0;border-radius:18px;padding:0 12px;min-height:36px;cursor:pointer}
+nav button[aria-pressed=true]{background:var(--s1);color:var(--ink)}
+nav button:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+main{max-width:760px;margin:0 auto;padding:28px 20px 72px}
+h1{font:500 clamp(30px,6vw,42px)/1.08 Jost,sans-serif;letter-spacing:-.015em;margin:8px 0 6px;text-wrap:balance}
+.upd{color:var(--ink3);font-size:14px;margin:0 0 28px}
+h2{font:500 22px/1.2 Jost,sans-serif;margin:36px 0 10px}
+p,li{color:var(--ink)}
+ul{padding-left:20px}li{margin:6px 0}
+a{color:inherit;text-underline-offset:3px}
+.lead{font-size:17px;color:var(--ink2)}
+table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0}
+th,td{text-align:left;vertical-align:top;padding:12px 10px;border-top:1px solid var(--line)}
+th{font-weight:600;color:var(--ink2);font-size:13px}
+.mail{display:inline-block;background:var(--s1);border-radius:10px;padding:10px 14px;font-weight:500;user-select:all}
+.faq h3{font:600 16px Inter,sans-serif;margin:24px 0 4px}
+footer{max-width:760px;margin:0 auto;padding:0 20px 40px;color:var(--ink3);font-size:13px}
+@media(max-width:600px){.stack thead{display:none}.stack tr{display:grid;padding-block:8px;border-top:1px solid var(--line)}.stack td{border:0;padding:4px 0}.stack td::before{content:attr(data-l);display:block;font-size:12px;color:var(--ink3)}}
+</style>
+</head>
+<body>
+<header><div class="bar">
+  <div class="brand">Underlye</div>
+  <nav id="sec" aria-label="Section"></nav>
+  <nav id="lng" aria-label="Language"></nav>
+</div></header>
+<main id="main"></main>
+<footer id="foot"></footer>
+<script>
+{
+const EMAIL = "underlyeapp@gmail.com";
+const OWNER = "Mateo Iglesias Pedroviejo";
+const M = `<span class="mail">${EMAIL}</span>`;
+
+const T = {
+es:{secs:{privacy:"Privacidad",terms:"Términos",support:"Soporte"},upd:"Última actualización: 14 de noviembre de 2026",foot:`Underlye · ${OWNER} · España`,
+privacy:`<h1>Política de privacidad</h1><p class="upd">{upd}</p>
+<p class="lead">Underlye no tiene cuentas de usuario ni guarda tus datos en servidores propios. Tu biblioteca, tus citas, tus notas y tus sesiones viven en tu iPhone y, si usas iCloud, en tu cuenta de iCloud. Solo salen del teléfono algunos datos concretos para buscar libros, recomendarte lecturas y gestionar tu suscripción, y no te identifican.</p>
+<h2>Responsable</h2><p>${OWNER}, España. Contacto: ${M}</p>
+<h2>Qué datos se tratan y para qué</h2>
+<table class="stack"><thead><tr><th>Datos</th><th>Dónde se guardan o a quién se envían</th><th>Para qué</th></tr></thead><tbody>
+<tr><td data-l="Datos">Tu biblioteca, citas, reflexiones, notas, sesiones de lectura, colecciones, valoraciones, tu nombre de pila y las respuestas del onboarding</td><td data-l="Dónde">En tu iPhone y en tu iCloud privado (Apple). Nosotros no tenemos acceso</td><td data-l="Para qué">Que la app funcione y se sincronice entre tus dispositivos</td></tr>
+<tr><td data-l="Datos">Lo que escribes en el buscador o el código de barras que escaneas</td><td data-l="Dónde">Google Books y Open Library</td><td data-l="Para qué">Encontrar el libro y su portada</td></tr>
+<tr><td data-l="Datos">Para las recomendaciones: idioma del teléfono, lo que buscas en la lectura, los libros que elegiste al empezar, un resumen de tu biblioteca (título, autor, estado y valoración, hasta 60 libros), los libros que descartaste y un identificador anónimo de instalación</td><td data-l="Dónde">Nuestro servidor en Supabase (Irlanda), que los reenvía a Anthropic y a Google Books</td><td data-l="Para qué">Elegir libros para ti y explicar por qué te pueden gustar</td></tr>
+<tr><td data-l="Datos">Compras y estado de tu suscripción, con un identificador anónimo</td><td data-l="Dónde">Apple y RevenueCat</td><td data-l="Para qué">Saber si tienes la suscripción activa</td></tr>
+</tbody></table>
+<p>No enviamos tu nombre, tus citas, tus notas ni tus reflexiones a ningún servidor. La cámara se usa para escanear códigos de barras y leer el texto de una página: se procesa en el propio iPhone y las fotos no se suben a ningún sitio. Los recordatorios de lectura son notificaciones locales del teléfono.</p>
+<p>No usamos publicidad, analítica ni rastreo, y no vendemos ni cedemos datos a terceros.</p>
+<h2>Base legal</h2><p>Tratamos estos datos porque son necesarios para darte el servicio que contratas (artículo 6.1.b del RGPD). El identificador anónimo de instalación sirve también para limitar el uso abusivo de las recomendaciones, por nuestro interés legítimo en mantener el servicio (artículo 6.1.f).</p>
+<h2>Proveedores</h2><ul>
+<li><b>Apple:</b> iCloud (sincronización) y App Store (pagos).</li>
+<li><b>Supabase</b> (servidor en la UE, Irlanda): recibe la petición de recomendaciones y no la guarda.</li>
+<li><b>Anthropic</b> (Estados Unidos): genera las recomendaciones con su modelo de IA a partir del resumen de tu biblioteca. Según sus condiciones para empresas, no usa estos datos para entrenar sus modelos.</li>
+<li><b>Google Books</b> (Google) y <b>Open Library</b> (Internet Archive): búsqueda de libros y portadas.</li>
+<li><b>RevenueCat</b> (Estados Unidos): gestión de la suscripción.</li></ul>
+<p>Cuando un proveedor está fuera del Espacio Económico Europeo, la transferencia se ampara en las cláusulas contractuales tipo de la Comisión Europea o en el Marco de Privacidad de Datos UE-EE. UU.</p>
+<h2>Cuánto tiempo se guardan</h2><p>Tus datos en el iPhone y en iCloud se guardan hasta que los borras. Nuestro servidor no guarda las peticiones de recomendaciones; solo lleva la cuenta de cuántas ha hecho cada instalación en el día y la borra al día siguiente. RevenueCat conserva el historial de compras mientras sea necesario para gestionar la suscripción y cumplir obligaciones legales.</p>
+<h2>Cómo borrar tus datos</h2><p>En Ajustes › Borrar todos mis datos se borra todo lo que la app tiene en tu iPhone y en tu iCloud. También puedes borrarlo desde los ajustes de iCloud de tu iPhone. La suscripción se cancela aparte, en los ajustes de tu cuenta de Apple.</p>
+<h2>Tus derechos</h2><p>Puedes pedir acceso, rectificación, supresión, oposición, limitación y portabilidad de tus datos escribiendo a ${M}. Como casi todo está solo en tu dispositivo, la mayoría de estos derechos los ejerces tú directamente desde la app. Si crees que no tratamos bien tus datos, puedes reclamar ante la Agencia Española de Protección de Datos (<a href="https://www.aepd.es">aepd.es</a>).</p>
+<h2>Menores</h2><p>Underlye no está dirigida a menores de 14 años.</p>
+<h2>Cambios</h2><p>Si cambiamos esta política, lo avisaremos en la app y actualizaremos la fecha de arriba.</p>`,
+terms:`<h1>Términos de uso</h1><p class="upd">{upd}</p>
+<p class="lead">Underlye es una app de pago por suscripción para organizar tu lectura: biblioteca, citas, notas, sesiones de lectura y recomendaciones. Al usarla aceptas estos términos y el <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Acuerdo de licencia de usuario final estándar de Apple</a>.</p>
+<h2>Quién la ofrece</h2><p>${OWNER}, España. Contacto: ${M}</p>
+<h2>Suscripción</h2><ul>
+<li>Para usar Underlye necesitas una suscripción activa. No hay versión gratuita ni periodo de prueba.</li>
+<li>Planes: anual, 29,99 € al año, o semanal, 7,99 € a la semana, IVA incluido. El precio puede variar según el país; el que ves en la App Store antes de pagar es el que se aplica.</li>
+<li>Oferta puntual: a veces la app puede ofrecerte el plan anual con un precio reducido el primer año (por ejemplo, 19,99 €). Después se renueva al precio anual normal, que se indica antes de pagar.</li>
+<li>El pago se cobra en tu cuenta de Apple al confirmar la compra.</li>
+<li>La suscripción se renueva sola al final de cada periodo, salvo que la canceles al menos 24 horas antes de que termine.</li>
+<li>Puedes cancelarla cuando quieras en Ajustes › tu nombre › Suscripciones. Sigues teniendo acceso hasta el final del periodo pagado.</li>
+<li>Si la suscripción termina, la app deja de estar disponible hasta que la renueves. Tus datos no se borran: siguen en tu iPhone y en tu iCloud.</li>
+<li>Los reembolsos los gestiona Apple según sus condiciones (<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>).</li>
+<li>Si cambiamos el precio, Apple te avisará antes y, cuando la ley lo exija, te pedirá que aceptes el nuevo precio.</li></ul>
+<h2>Tu contenido</h2><p>Todo lo que guardas en Underlye (citas, notas, reflexiones, valoraciones) es tuyo y lo controlas tú. Las citas de libros pertenecen a sus autores: guárdalas y compártelas para uso personal, sin reproducir obras completas.</p>
+<h2>Recomendaciones</h2><p>Las recomendaciones las genera un modelo de inteligencia artificial y se comprueban en Google Books. Pueden equivocarse o no encajar contigo; son sugerencias, no consejos profesionales. Los datos de los libros (títulos, portadas, páginas) vienen de Google Books y Open Library y pueden tener errores.</p>
+<h2>Uso aceptable</h2><p>No intentes copiar, modificar ni desmontar la app, ni usar sus servicios de forma automatizada o abusiva. Podemos limitar el uso de las recomendaciones para que el servicio funcione bien para todos.</p>
+<h2>Disponibilidad y responsabilidad</h2><p>Hacemos lo posible para que la app funcione siempre, pero puede haber fallos o interrupciones, sobre todo en las funciones que dependen de internet. Haz copia de seguridad de tu iPhone e iCloud. Nada de estos términos limita los derechos que te reconoce la ley como consumidor.</p>
+<h2>Cambios</h2><p>Si cambiamos estos términos, lo avisaremos en la app. Si no estás de acuerdo, puedes cancelar la suscripción.</p>
+<h2>Ley aplicable</h2><p>Se aplica la ley española. Si eres consumidor, puedes reclamar ante los tribunales de tu domicilio y tienes los derechos que te reconozca la ley de tu país de residencia.</p>`,
+support:`<h1>Soporte</h1><p class="lead">¿Algo no funciona o tienes una duda? Escríbenos y te respondemos lo antes posible.</p><p>${M}</p>
+<div class="faq">
+<h3>He cambiado de iPhone y no veo mi suscripción</h3><p>Abre Underlye y toca «Restaurar compras» en la pantalla de bienvenida o en el paywall. Usa el mismo Apple ID con el que pagaste.</p>
+<h3>¿Cómo cancelo la suscripción?</h3><p>En el iPhone: Ajustes › tu nombre › Suscripciones › Underlye › Cancelar suscripción. Sigues teniendo acceso hasta el final del periodo pagado.</p>
+<h3>¿Cómo pido un reembolso?</h3><p>Los reembolsos los gestiona Apple en <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<h3>Mis libros no aparecen en otro dispositivo</h3><p>Comprueba que iCloud está activado para Underlye en Ajustes › tu nombre › iCloud y que usas el mismo Apple ID. La sincronización puede tardar unos minutos.</p>
+<h3>¿Cómo borro todos mis datos?</h3><p>En la app: Ajustes › Borrar todos mis datos. Se borra lo que hay en tu iPhone y en tu iCloud.</p>
+<h3>No encuentro un libro</h3><p>Prueba a buscarlo por su ISBN o escanea el código de barras. Si aun así no aparece, escríbenos con el título y el autor.</p></div>`},
+
+en:{secs:{privacy:"Privacy",terms:"Terms",support:"Support"},upd:"Last updated: November 14, 2026",foot:`Underlye · ${OWNER} · Spain`,
+privacy:`<h1>Privacy Policy</h1><p class="upd">{upd}</p>
+<p class="lead">Underlye has no user accounts and does not keep your data on its own servers. Your library, quotes, notes and sessions live on your iPhone and, if you use iCloud, in your iCloud account. Only a few specific pieces of data leave your phone, to search for books, recommend reads and manage your subscription, and they do not identify you.</p>
+<h2>Data controller</h2><p>${OWNER}, Spain. Contact: ${M}</p>
+<h2>What data is processed and why</h2>
+<table class="stack"><thead><tr><th>Data</th><th>Where it is stored or who receives it</th><th>Why</th></tr></thead><tbody>
+<tr><td data-l="Data">Your library, quotes, reflections, notes, reading sessions, collections, ratings, your first name and your onboarding answers</td><td data-l="Where">On your iPhone and in your private iCloud (Apple). We have no access</td><td data-l="Why">To run the app and sync it across your devices</td></tr>
+<tr><td data-l="Data">What you type in search or the barcode you scan</td><td data-l="Where">Google Books and Open Library</td><td data-l="Why">To find the book and its cover</td></tr>
+<tr><td data-l="Data">For recommendations: your phone's language, what you look for in reading, the books you picked at the start, a summary of your library (title, author, status and rating, up to 60 books), the books you dismissed and an anonymous install ID</td><td data-l="Where">Our server on Supabase (Ireland), which forwards it to Anthropic and Google Books</td><td data-l="Why">To pick books for you and explain why you might like them</td></tr>
+<tr><td data-l="Data">Purchases and subscription status, with an anonymous ID</td><td data-l="Where">Apple and RevenueCat</td><td data-l="Why">To know whether your subscription is active</td></tr>
+</tbody></table>
+<p>We never send your name, quotes, notes or reflections to any server. The camera is used to scan barcodes and read text from a page; this is processed on your iPhone and no photos are uploaded. Reading reminders are local notifications on your phone.</p>
+<p>We use no advertising, analytics or tracking, and we do not sell or share data with third parties.</p>
+<h2>Legal basis</h2><p>We process this data because it is necessary to provide the service you subscribe to (Article 6(1)(b) GDPR). The anonymous install ID is also used to prevent abuse of recommendations, based on our legitimate interest in keeping the service running (Article 6(1)(f)).</p>
+<h2>Service providers</h2><ul>
+<li><b>Apple:</b> iCloud (sync) and the App Store (payments).</li>
+<li><b>Supabase</b> (server in the EU, Ireland): receives the recommendation request and does not store it.</li>
+<li><b>Anthropic</b> (United States): generates recommendations with its AI model from your library summary. Under its commercial terms, it does not use this data to train its models.</li>
+<li><b>Google Books</b> (Google) and <b>Open Library</b> (Internet Archive): book search and covers.</li>
+<li><b>RevenueCat</b> (United States): subscription management.</li></ul>
+<p>Where a provider is outside the European Economic Area, transfers rely on the European Commission's Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>
+<h2>How long data is kept</h2><p>Data on your iPhone and in iCloud is kept until you delete it. Our server does not store recommendation requests; it only counts how many each install made that day and clears the count the next day. RevenueCat keeps purchase history as long as needed to manage the subscription and meet legal obligations.</p>
+<h2>Deleting your data</h2><p>Settings › Delete all my data removes everything the app has on your iPhone and in your iCloud. You can also delete it from your iPhone's iCloud settings. Your subscription is cancelled separately, in your Apple account settings.</p>
+<h2>Your rights</h2><p>You can request access, correction, deletion, objection, restriction and portability by writing to ${M}. Since almost everything stays on your device, you can exercise most of these rights directly in the app. If you believe we are not handling your data properly, you can complain to the Spanish Data Protection Agency (<a href="https://www.aepd.es">aepd.es</a>) or your local authority.</p>
+<h2>Children</h2><p>Underlye is not directed at children under 14.</p>
+<h2>Changes</h2><p>If we change this policy, we will let you know in the app and update the date above.</p>`,
+terms:`<h1>Terms of Use</h1><p class="upd">{upd}</p>
+<p class="lead">Underlye is a paid subscription app for organising your reading: library, quotes, notes, reading sessions and recommendations. By using it you accept these terms and <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple's Standard End User License Agreement</a>.</p>
+<h2>Provider</h2><p>${OWNER}, Spain. Contact: ${M}</p>
+<h2>Subscription</h2><ul>
+<li>Underlye requires an active subscription. There is no free version and no free trial.</li>
+<li>Plans: annual, $29.99 per year, or weekly, $7.99 per week (or the equivalent in your currency, taxes included where applicable). The price shown in the App Store before you pay is the one that applies.</li>
+<li>One-time offer: the app may sometimes offer the annual plan at a reduced price for the first year (for example, $19.99). It then renews at the regular annual price, shown before you pay.</li>
+<li>Payment is charged to your Apple account when you confirm the purchase.</li>
+<li>The subscription renews automatically at the end of each period unless you cancel at least 24 hours before it ends.</li>
+<li>You can cancel at any time in Settings › your name › Subscriptions. You keep access until the end of the paid period.</li>
+<li>If your subscription ends, the app is unavailable until you renew. Your data is not deleted: it stays on your iPhone and in your iCloud.</li>
+<li>Refunds are handled by Apple under its terms (<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>).</li>
+<li>If we change the price, Apple will notify you in advance and, where the law requires it, ask you to accept the new price.</li></ul>
+<h2>Your content</h2><p>Everything you save in Underlye (quotes, notes, reflections, ratings) is yours and under your control. Book quotes belong to their authors: save and share them for personal use, without reproducing complete works.</p>
+<h2>Recommendations</h2><p>Recommendations are generated by an artificial intelligence model and checked against Google Books. They may be wrong or not suit you; they are suggestions, not professional advice. Book data (titles, covers, page counts) comes from Google Books and Open Library and may contain errors.</p>
+<h2>Acceptable use</h2><p>Do not try to copy, modify or reverse engineer the app, or use its services in an automated or abusive way. We may limit recommendation usage so the service works well for everyone.</p>
+<h2>Availability and liability</h2><p>We do our best to keep the app working, but there may be bugs or interruptions, especially in features that depend on the internet. Back up your iPhone and iCloud. Nothing in these terms limits your statutory rights as a consumer.</p>
+<h2>Changes</h2><p>If we change these terms, we will let you know in the app. If you disagree, you can cancel your subscription.</p>
+<h2>Governing law</h2><p>Spanish law applies. If you are a consumer, you may bring claims before the courts where you live and you keep the rights granted by the law of your country of residence.</p>`,
+support:`<h1>Support</h1><p class="lead">Something not working, or have a question? Write to us and we will reply as soon as we can.</p><p>${M}</p>
+<div class="faq">
+<h3>I changed iPhones and can't see my subscription</h3><p>Open Underlye and tap "Restore purchases" on the welcome screen or the paywall. Use the same Apple ID you paid with.</p>
+<h3>How do I cancel my subscription?</h3><p>On your iPhone: Settings › your name › Subscriptions › Underlye › Cancel Subscription. You keep access until the end of the paid period.</p>
+<h3>How do I request a refund?</h3><p>Refunds are handled by Apple at <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<h3>My books don't show up on another device</h3><p>Check that iCloud is on for Underlye in Settings › your name › iCloud and that you use the same Apple ID. Syncing can take a few minutes.</p>
+<h3>How do I delete all my data?</h3><p>In the app: Settings › Delete all my data. This removes everything on your iPhone and in your iCloud.</p>
+<h3>I can't find a book</h3><p>Try searching by ISBN or scan the barcode. If it still doesn't appear, write to us with the title and author.</p></div>`},
+
+pt:{secs:{privacy:"Privacidade",terms:"Termos",support:"Suporte"},upd:"Última atualização: 14 de novembro de 2026",foot:`Underlye · ${OWNER} · Espanha`,
+privacy:`<h1>Política de Privacidade</h1><p class="upd">{upd}</p>
+<p class="lead">O Underlye não tem contas de usuário nem guarda seus dados em servidores próprios. Sua biblioteca, citações, notas e sessões ficam no seu iPhone e, se você usa o iCloud, na sua conta do iCloud. Só saem do telefone alguns dados específicos para buscar livros, recomendar leituras e gerenciar sua assinatura, e eles não identificam você.</p>
+<h2>Controlador</h2><p>${OWNER}, Espanha. Contato: ${M}</p>
+<h2>Quais dados são tratados e para quê</h2>
+<table class="stack"><thead><tr><th>Dados</th><th>Onde ficam ou para quem são enviados</th><th>Para quê</th></tr></thead><tbody>
+<tr><td data-l="Dados">Sua biblioteca, citações, reflexões, notas, sessões de leitura, coleções, avaliações, seu primeiro nome e as respostas do onboarding</td><td data-l="Onde">No seu iPhone e no seu iCloud privado (Apple). Não temos acesso</td><td data-l="Para quê">Fazer o app funcionar e sincronizar entre seus dispositivos</td></tr>
+<tr><td data-l="Dados">O que você digita na busca ou o código de barras que escaneia</td><td data-l="Onde">Google Books e Open Library</td><td data-l="Para quê">Encontrar o livro e a capa</td></tr>
+<tr><td data-l="Dados">Para as indicações: idioma do telefone, o que você busca na leitura, os livros escolhidos no início, um resumo da sua biblioteca (título, autor, status e avaliação, até 60 livros), os livros descartados e um identificador anônimo de instalação</td><td data-l="Onde">Nosso servidor no Supabase (Irlanda), que os encaminha à Anthropic e ao Google Books</td><td data-l="Para quê">Escolher livros para você e explicar por que você pode gostar deles</td></tr>
+<tr><td data-l="Dados">Compras e status da assinatura, com um identificador anônimo</td><td data-l="Onde">Apple e RevenueCat</td><td data-l="Para quê">Saber se sua assinatura está ativa</td></tr>
+</tbody></table>
+<p>Não enviamos seu nome, suas citações, notas ou reflexões a nenhum servidor. A câmera é usada para escanear códigos de barras e ler o texto de uma página; isso é processado no próprio iPhone e nenhuma foto é enviada. Os lembretes de leitura são notificações locais do telefone.</p>
+<p>Não usamos publicidade, análises nem rastreamento, e não vendemos nem compartilhamos dados com terceiros.</p>
+<h2>Base legal</h2><p>Tratamos esses dados porque são necessários para prestar o serviço que você assina (artigo 6.1.b do RGPD). O identificador anônimo de instalação também serve para limitar o uso abusivo das indicações, com base no nosso interesse legítimo em manter o serviço (artigo 6.1.f). Para usuários no Brasil, aplicam-se também as bases equivalentes da LGPD.</p>
+<h2>Fornecedores</h2><ul>
+<li><b>Apple:</b> iCloud (sincronização) e App Store (pagamentos).</li>
+<li><b>Supabase</b> (servidor na UE, Irlanda): recebe o pedido de indicações e não o guarda.</li>
+<li><b>Anthropic</b> (Estados Unidos): gera as indicações com seu modelo de IA a partir do resumo da sua biblioteca. Pelos termos comerciais, não usa esses dados para treinar seus modelos.</li>
+<li><b>Google Books</b> (Google) e <b>Open Library</b> (Internet Archive): busca de livros e capas.</li>
+<li><b>RevenueCat</b> (Estados Unidos): gestão da assinatura.</li></ul>
+<p>Quando um fornecedor está fora do Espaço Econômico Europeu, a transferência se baseia nas cláusulas contratuais-padrão da Comissão Europeia ou no Quadro de Privacidade de Dados UE-EUA.</p>
+<h2>Por quanto tempo</h2><p>Os dados no iPhone e no iCloud ficam guardados até você apagá-los. Nosso servidor não guarda os pedidos de indicações; só conta quantos cada instalação fez no dia e apaga a contagem no dia seguinte. A RevenueCat guarda o histórico de compras pelo tempo necessário para gerenciar a assinatura e cumprir obrigações legais.</p>
+<h2>Como apagar seus dados</h2><p>Em Ajustes › Apagar todos os meus dados, o app apaga tudo o que tem no seu iPhone e no seu iCloud. Você também pode apagar pelos ajustes do iCloud do iPhone. A assinatura é cancelada à parte, nos ajustes da sua conta Apple.</p>
+<h2>Seus direitos</h2><p>Você pode pedir acesso, correção, exclusão, oposição, limitação e portabilidade dos seus dados escrevendo para ${M}. Como quase tudo fica só no seu dispositivo, a maioria desses direitos você exerce direto no app. Se achar que não tratamos bem seus dados, pode reclamar à autoridade de proteção de dados do seu país (no Brasil, a ANPD).</p>
+<h2>Menores</h2><p>O Underlye não é direcionado a menores de 14 anos.</p>
+<h2>Alterações</h2><p>Se mudarmos esta política, avisaremos no app e atualizaremos a data acima.</p>`,
+terms:`<h1>Termos de Uso</h1><p class="upd">{upd}</p>
+<p class="lead">O Underlye é um app pago por assinatura para organizar sua leitura: biblioteca, citações, notas, sessões de leitura e indicações. Ao usá-lo, você aceita estes termos e o <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Contrato de Licença de Usuário Final padrão da Apple</a>.</p>
+<h2>Quem oferece</h2><p>${OWNER}, Espanha. Contato: ${M}</p>
+<h2>Assinatura</h2><ul>
+<li>Para usar o Underlye é preciso uma assinatura ativa. Não há versão gratuita nem período de teste.</li>
+<li>Planos: anual ou semanal. O preço na sua moeda aparece na App Store antes de pagar, e é esse que se aplica.</li>
+<li>Oferta pontual: às vezes o app pode oferecer o plano anual com preço reduzido no primeiro ano. Depois ele é renovado pelo preço anual normal, informado antes de pagar.</li>
+<li>O pagamento é cobrado na sua conta Apple ao confirmar a compra.</li>
+<li>A assinatura é renovada automaticamente ao fim de cada período, a menos que seja cancelada pelo menos 24 horas antes do fim.</li>
+<li>Você pode cancelar quando quiser em Ajustes › seu nome › Assinaturas. O acesso continua até o fim do período pago.</li>
+<li>Se a assinatura terminar, o app fica indisponível até você renovar. Seus dados não são apagados: continuam no iPhone e no iCloud.</li>
+<li>Reembolsos são feitos pela Apple, segundo as condições dela (<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>).</li>
+<li>Se mudarmos o preço, a Apple avisará antes e, quando a lei exigir, pedirá que você aceite o novo preço.</li></ul>
+<h2>Seu conteúdo</h2><p>Tudo o que você guarda no Underlye (citações, notas, reflexões, avaliações) é seu e você controla. As citações pertencem aos autores dos livros: guarde e compartilhe para uso pessoal, sem reproduzir obras completas.</p>
+<h2>Indicações</h2><p>As indicações são geradas por um modelo de inteligência artificial e conferidas no Google Books. Podem errar ou não combinar com você; são sugestões, não conselhos profissionais. Os dados dos livros vêm do Google Books e da Open Library e podem ter erros.</p>
+<h2>Uso aceitável</h2><p>Não tente copiar, modificar ou desmontar o app, nem usar os serviços de forma automatizada ou abusiva. Podemos limitar o uso das indicações para que o serviço funcione bem para todos.</p>
+<h2>Disponibilidade e responsabilidade</h2><p>Fazemos o possível para o app funcionar sempre, mas pode haver falhas ou interrupções, principalmente nas funções que dependem da internet. Faça backup do iPhone e do iCloud. Nada nestes termos limita seus direitos legais como consumidor.</p>
+<h2>Alterações</h2><p>Se mudarmos estes termos, avisaremos no app. Se não concordar, você pode cancelar a assinatura.</p>
+<h2>Lei aplicável</h2><p>Aplica-se a lei espanhola. Se você é consumidor, pode recorrer aos tribunais do seu domicílio e mantém os direitos garantidos pela lei do seu país de residência.</p>`,
+support:`<h1>Suporte</h1><p class="lead">Algo não funciona ou tem uma dúvida? Escreva para nós e responderemos o quanto antes.</p><p>${M}</p>
+<div class="faq">
+<h3>Troquei de iPhone e não vejo minha assinatura</h3><p>Abra o Underlye e toque em «Restaurar compras» na tela de boas-vindas ou no paywall. Use o mesmo ID Apple com que pagou.</p>
+<h3>Como cancelo a assinatura?</h3><p>No iPhone: Ajustes › seu nome › Assinaturas › Underlye › Cancelar assinatura. O acesso continua até o fim do período pago.</p>
+<h3>Como peço reembolso?</h3><p>Os reembolsos são feitos pela Apple em <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<h3>Meus livros não aparecem em outro dispositivo</h3><p>Verifique se o iCloud está ativado para o Underlye em Ajustes › seu nome › iCloud e se você usa o mesmo ID Apple. A sincronização pode levar alguns minutos.</p>
+<h3>Como apago todos os meus dados?</h3><p>No app: Ajustes › Apagar todos os meus dados. Isso apaga tudo no iPhone e no iCloud.</p>
+<h3>Não encontro um livro</h3><p>Tente buscar pelo ISBN ou escaneie o código de barras. Se mesmo assim não aparecer, escreva para nós com título e autor.</p></div>`},
+
+fr:{secs:{privacy:"Confidentialité",terms:"Conditions",support:"Assistance"},upd:"Dernière mise à jour : 14 novembre 2026",foot:`Underlye · ${OWNER} · Espagne`,
+privacy:`<h1>Politique de confidentialité</h1><p class="upd">{upd}</p>
+<p class="lead">Underlye n'a pas de comptes utilisateur et ne conserve pas vos données sur ses propres serveurs. Votre bibliothèque, vos citations, vos notes et vos sessions restent sur votre iPhone et, si vous utilisez iCloud, dans votre compte iCloud. Seules quelques données précises quittent le téléphone, pour rechercher des livres, vous recommander des lectures et gérer votre abonnement, et elles ne vous identifient pas.</p>
+<h2>Responsable du traitement</h2><p>${OWNER}, Espagne. Contact : ${M}</p>
+<h2>Données traitées et finalités</h2>
+<table class="stack"><thead><tr><th>Données</th><th>Où elles sont conservées ou à qui elles sont envoyées</th><th>Pourquoi</th></tr></thead><tbody>
+<tr><td data-l="Données">Votre bibliothèque, citations, réflexions, notes, sessions de lecture, collections, notes attribuées, votre prénom et vos réponses à l'accueil</td><td data-l="Où">Sur votre iPhone et dans votre iCloud privé (Apple). Nous n'y avons pas accès</td><td data-l="Pourquoi">Faire fonctionner l'app et la synchroniser entre vos appareils</td></tr>
+<tr><td data-l="Données">Ce que vous tapez dans la recherche ou le code-barres scanné</td><td data-l="Où">Google Books et Open Library</td><td data-l="Pourquoi">Trouver le livre et sa couverture</td></tr>
+<tr><td data-l="Données">Pour les suggestions : langue du téléphone, ce que vous cherchez dans la lecture, les livres choisis au début, un résumé de votre bibliothèque (titre, auteur, statut et note, jusqu'à 60 livres), les livres écartés et un identifiant d'installation anonyme</td><td data-l="Où">Notre serveur sur Supabase (Irlande), qui les transmet à Anthropic et à Google Books</td><td data-l="Pourquoi">Choisir des livres pour vous et expliquer pourquoi ils pourraient vous plaire</td></tr>
+<tr><td data-l="Données">Achats et statut de l'abonnement, avec un identifiant anonyme</td><td data-l="Où">Apple et RevenueCat</td><td data-l="Pourquoi">Savoir si votre abonnement est actif</td></tr>
+</tbody></table>
+<p>Nous n'envoyons jamais votre nom, vos citations, vos notes ou vos réflexions à un serveur. L'appareil photo sert à scanner des codes-barres et à lire le texte d'une page ; le traitement se fait sur l'iPhone et aucune photo n'est envoyée. Les rappels de lecture sont des notifications locales du téléphone.</p>
+<p>Nous n'utilisons ni publicité, ni outils d'analyse, ni pistage, et nous ne vendons ni ne cédons de données à des tiers.</p>
+<h2>Base légale</h2><p>Nous traitons ces données car elles sont nécessaires pour fournir le service auquel vous êtes abonné (article 6.1.b du RGPD). L'identifiant d'installation anonyme sert aussi à limiter l'usage abusif des suggestions, sur la base de notre intérêt légitime à maintenir le service (article 6.1.f).</p>
+<h2>Prestataires</h2><ul>
+<li><b>Apple :</b> iCloud (synchronisation) et App Store (paiements).</li>
+<li><b>Supabase</b> (serveur dans l'UE, Irlande) : reçoit la demande de suggestions et ne la conserve pas.</li>
+<li><b>Anthropic</b> (États-Unis) : génère les suggestions avec son modèle d'IA à partir du résumé de votre bibliothèque. Selon ses conditions commerciales, ces données ne servent pas à entraîner ses modèles.</li>
+<li><b>Google Books</b> (Google) et <b>Open Library</b> (Internet Archive) : recherche de livres et couvertures.</li>
+<li><b>RevenueCat</b> (États-Unis) : gestion de l'abonnement.</li></ul>
+<p>Lorsqu'un prestataire est situé hors de l'Espace économique européen, le transfert repose sur les clauses contractuelles types de la Commission européenne ou sur le cadre de protection des données UE-États-Unis.</p>
+<h2>Durée de conservation</h2><p>Les données sur votre iPhone et dans iCloud sont conservées jusqu'à ce que vous les supprimiez. Notre serveur ne conserve pas les demandes de suggestions ; il compte seulement combien chaque installation en a fait dans la journée et efface ce compteur le lendemain. RevenueCat conserve l'historique d'achats le temps nécessaire à la gestion de l'abonnement et au respect des obligations légales.</p>
+<h2>Supprimer vos données</h2><p>Dans Réglages › Supprimer toutes mes données, l'app efface tout ce qu'elle a sur votre iPhone et dans votre iCloud. Vous pouvez aussi le faire depuis les réglages iCloud de l'iPhone. L'abonnement se résilie séparément, dans les réglages de votre compte Apple.</p>
+<h2>Vos droits</h2><p>Vous pouvez demander l'accès, la rectification, l'effacement, l'opposition, la limitation et la portabilité de vos données en écrivant à ${M}. Comme presque tout reste sur votre appareil, vous exercez la plupart de ces droits directement dans l'app. Si vous estimez que vos données ne sont pas bien traitées, vous pouvez saisir l'autorité de protection des données de votre pays (en France, la CNIL).</p>
+<h2>Mineurs</h2><p>Underlye ne s'adresse pas aux moins de 14 ans.</p>
+<h2>Modifications</h2><p>Si nous modifions cette politique, nous vous en informerons dans l'app et mettrons à jour la date ci-dessus.</p>`,
+terms:`<h1>Conditions d'utilisation</h1><p class="upd">{upd}</p>
+<p class="lead">Underlye est une app payante par abonnement pour organiser votre lecture : bibliothèque, citations, notes, sessions de lecture et suggestions. En l'utilisant, vous acceptez ces conditions et le <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">contrat de licence utilisateur final standard d'Apple</a>.</p>
+<h2>Éditeur</h2><p>${OWNER}, Espagne. Contact : ${M}</p>
+<h2>Abonnement</h2><ul>
+<li>Underlye nécessite un abonnement actif. Il n'y a ni version gratuite ni période d'essai.</li>
+<li>Formules : annuelle, 29,99 € par an, ou hebdomadaire, 7,99 € par semaine, TVA comprise. Le prix peut varier selon le pays ; celui affiché dans l'App Store avant le paiement est celui qui s'applique.</li>
+<li>Offre ponctuelle : l'app peut parfois proposer la formule annuelle à prix réduit la première année (par exemple 19,99 €). Elle se renouvelle ensuite au prix annuel normal, indiqué avant le paiement.</li>
+<li>Le paiement est débité sur votre compte Apple à la confirmation de l'achat.</li>
+<li>L'abonnement se renouvelle automatiquement à la fin de chaque période, sauf résiliation au moins 24 heures avant son terme.</li>
+<li>Vous pouvez le résilier à tout moment dans Réglages › votre nom › Abonnements. L'accès reste ouvert jusqu'à la fin de la période payée.</li>
+<li>Si l'abonnement prend fin, l'app n'est plus disponible jusqu'au renouvellement. Vos données ne sont pas supprimées : elles restent sur votre iPhone et dans votre iCloud.</li>
+<li>Les remboursements sont gérés par Apple selon ses conditions (<a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>).</li>
+<li>Si nous modifions le prix, Apple vous préviendra à l'avance et, lorsque la loi l'exige, vous demandera d'accepter le nouveau prix.</li></ul>
+<h2>Votre contenu</h2><p>Tout ce que vous enregistrez dans Underlye (citations, notes, réflexions, notes attribuées) vous appartient et reste sous votre contrôle. Les citations appartiennent aux auteurs des livres : conservez-les et partagez-les pour un usage personnel, sans reproduire d'œuvres complètes.</p>
+<h2>Suggestions</h2><p>Les suggestions sont générées par un modèle d'intelligence artificielle et vérifiées dans Google Books. Elles peuvent se tromper ou ne pas vous convenir ; ce sont des suggestions, pas des conseils professionnels. Les données des livres proviennent de Google Books et d'Open Library et peuvent comporter des erreurs.</p>
+<h2>Utilisation acceptable</h2><p>N'essayez pas de copier, modifier ou décompiler l'app, ni d'utiliser ses services de façon automatisée ou abusive. Nous pouvons limiter l'usage des suggestions pour que le service fonctionne bien pour tous.</p>
+<h2>Disponibilité et responsabilité</h2><p>Nous faisons notre possible pour que l'app fonctionne toujours, mais des bugs ou interruptions peuvent survenir, surtout pour les fonctions qui dépendent d'internet. Sauvegardez votre iPhone et iCloud. Rien dans ces conditions ne limite vos droits légaux de consommateur.</p>
+<h2>Modifications</h2><p>Si nous modifions ces conditions, nous vous en informerons dans l'app. Si vous n'êtes pas d'accord, vous pouvez résilier l'abonnement.</p>
+<h2>Droit applicable</h2><p>Le droit espagnol s'applique. Si vous êtes consommateur, vous pouvez saisir les tribunaux de votre domicile et conservez les droits que vous accorde la loi de votre pays de résidence.</p>`,
+support:`<h1>Assistance</h1><p class="lead">Quelque chose ne fonctionne pas ou vous avez une question ? Écrivez-nous, nous répondrons au plus vite.</p><p>${M}</p>
+<div class="faq">
+<h3>J'ai changé d'iPhone et je ne vois plus mon abonnement</h3><p>Ouvrez Underlye et touchez « Restaurer les achats » sur l'écran d'accueil ou le paywall. Utilisez le même identifiant Apple que pour le paiement.</p>
+<h3>Comment résilier mon abonnement ?</h3><p>Sur l'iPhone : Réglages › votre nom › Abonnements › Underlye › Annuler l'abonnement. L'accès reste ouvert jusqu'à la fin de la période payée.</p>
+<h3>Comment demander un remboursement ?</h3><p>Les remboursements sont gérés par Apple sur <a href="https://reportaproblem.apple.com">reportaproblem.apple.com</a>.</p>
+<h3>Mes livres n'apparaissent pas sur un autre appareil</h3><p>Vérifiez qu'iCloud est activé pour Underlye dans Réglages › votre nom › iCloud et que vous utilisez le même identifiant Apple. La synchronisation peut prendre quelques minutes.</p>
+<h3>Comment supprimer toutes mes données ?</h3><p>Dans l'app : Réglages › Supprimer toutes mes données. Tout est effacé sur l'iPhone et dans iCloud.</p>
+<h3>Je ne trouve pas un livre</h3><p>Essayez de le chercher par ISBN ou scannez le code-barres. S'il n'apparaît toujours pas, écrivez-nous avec le titre et l'auteur.</p></div>`}
+};
+
+const LANGS=[["en","EN"],["es","ES"],["pt","PT"],["fr","FR"]];
+const SECS=["privacy","terms","support"];
+const nav=document.getElementById("sec"), lnav=document.getElementById("lng"), main=document.getElementById("main"), foot=document.getElementById("foot");
+let lang=(()=>{let l="en";try{l=localStorage.getItem("ul-lang")||(navigator.language||"en").slice(0,2)}catch(e){l=(navigator.language||"en").slice(0,2)}return T[l]?l:"en"})();
+const sec=()=>{const h=location.hash.replace("#","");if(SECS.includes(h))return h;const p=location.pathname.split("/").filter(Boolean)[0];return SECS.includes(p)?p:"privacy"};
+function render(){
+  const t=T[lang],s=sec();
+  document.documentElement.lang=lang;
+  nav.innerHTML=SECS.map(k=>`<button data-s="${k}" aria-pressed="${k===s}">${t.secs[k]}</button>`).join("");
+  lnav.innerHTML=LANGS.map(([k,l])=>`<button data-l="${k}" aria-pressed="${k===lang}">${l}</button>`).join("");
+  main.innerHTML=t[s].replace("{upd}",t.upd);
+  foot.textContent=t.foot;
+  document.title="Underlye · "+t.secs[s];
+}
+nav.addEventListener("click",e=>{const b=e.target.closest("button");if(b){if(location.protocol.startsWith("http")&&!location.hostname.endsWith("claude.ai")){location.href="/"+b.dataset.s+"/";}else{location.hash=b.dataset.s;window.scrollTo(0,0)}}});
+lnav.addEventListener("click",e=>{const b=e.target.closest("button");if(b){lang=b.dataset.l;try{localStorage.setItem("ul-lang",lang)}catch(x){}render()}});
+window.addEventListener("hashchange",render);
+render();
+}
+</script>
+</body>
+</html>
