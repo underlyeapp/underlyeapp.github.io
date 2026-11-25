@@ -55,7 +55,7 @@ const OWNER = "Mateo Iglesias Pedroviejo";
 const M = `<span class="mail">${EMAIL}</span>`;
 
 const T = {
-es:{secs:{privacy:"Privacidad",terms:"Términos",support:"Soporte"},upd:"Última actualización: 14 de noviembre de 2026",foot:`Underlye · ${OWNER} · España`,
+es:{secs:{privacy:"Privacidad",terms:"Términos",support:"Soporte"},upd:"Última actualización: 24 de noviembre de 2026",foot:`Underlye · ${OWNER} · España`,
 privacy:`<h1>Política de privacidad</h1><p class="upd">{upd}</p>
 <p class="lead">Underlye no tiene cuentas de usuario ni guarda tus datos en servidores propios. Tu biblioteca, tus citas, tus notas y tus sesiones viven en tu iPhone y, si usas iCloud, en tu cuenta de iCloud. Solo salen del teléfono algunos datos concretos para buscar libros, recomendarte lecturas y gestionar tu suscripción, y no te identifican.</p>
 <h2>Responsable</h2><p>${OWNER}, España. Contacto: ${M}</p>
@@ -65,16 +65,18 @@ privacy:`<h1>Política de privacidad</h1><p class="upd">{upd}</p>
 <tr><td data-l="Datos">Lo que escribes en el buscador o el código de barras que escaneas</td><td data-l="Dónde">Google Books y Open Library</td><td data-l="Para qué">Encontrar el libro y su portada</td></tr>
 <tr><td data-l="Datos">Para las recomendaciones: idioma del teléfono, lo que buscas en la lectura, los libros que elegiste al empezar, un resumen de tu biblioteca (título, autor, estado y valoración, hasta 60 libros), los libros que descartaste y un identificador anónimo de instalación</td><td data-l="Dónde">Nuestro servidor en Supabase (Irlanda), que los reenvía a Anthropic y a Google Books</td><td data-l="Para qué">Elegir libros para ti y explicar por qué te pueden gustar. Solo se envían si activas las recomendaciones: la app te lo pregunta antes de la primera y puedes desactivarlas cuando quieras en Ajustes</td></tr>
 <tr><td data-l="Datos">Compras y estado de tu suscripción, con un identificador anónimo</td><td data-l="Dónde">Apple y RevenueCat</td><td data-l="Para qué">Saber si tienes la suscripción activa</td></tr>
+<tr><td data-l="Datos">Estadísticas anónimas de uso: qué pantallas de la configuración inicial y de la suscripción se ven, las opciones elegidas al empezar, y el modelo de iPhone, la versión del sistema y el idioma, con un identificador anónimo</td><td data-l="Dónde">PostHog (Estados Unidos)</td><td data-l="Para qué">Saber en qué pantallas se queda la gente y mejorar la app</td></tr>
 </tbody></table>
 <p>No enviamos tu nombre, tus citas, tus notas ni tus reflexiones a ningún servidor. La cámara se usa para escanear códigos de barras y leer el texto de una página: se procesa en el propio iPhone y las fotos no se suben a ningún sitio. Los recordatorios de lectura son notificaciones locales del teléfono.</p>
-<p>No usamos publicidad, analítica ni rastreo, y no vendemos tus datos. Solo se comparten con los proveedores de la lista de abajo, y solo para lo que se indica.</p>
-<h2>Base legal</h2><p>Tratamos estos datos porque son necesarios para darte el servicio que contratas (artículo 6.1.b del RGPD). El identificador anónimo de instalación sirve también para limitar el uso abusivo de las recomendaciones, por nuestro interés legítimo en mantener el servicio (artículo 6.1.f).</p>
+<p>No usamos publicidad ni rastreo entre apps, y no vendemos tus datos. Usamos PostHog para estadísticas anónimas de uso (qué pantallas se ven y qué opciones se eligen al empezar): sin tu nombre, tu correo ni nada de lo que escribes o guardas, y sin vincularlas a ti. Tus datos solo se comparten con los proveedores de la lista de abajo, y solo para lo que se indica.</p>
+<h2>Base legal</h2><p>Tratamos estos datos porque son necesarios para darte el servicio que contratas (artículo 6.1.b del RGPD). El identificador anónimo de instalación sirve también para limitar el uso abusivo de las recomendaciones, por nuestro interés legítimo en mantener el servicio (artículo 6.1.f). Las estadísticas anónimas de uso se basan en nuestro interés legítimo en mejorar la app (artículo 6.1.f).</p>
 <h2>Proveedores</h2><ul>
 <li><b>Apple:</b> iCloud (sincronización) y App Store (pagos).</li>
 <li><b>Supabase</b> (servidor en la UE, Irlanda): recibe la petición de recomendaciones y no la guarda.</li>
 <li><b>Anthropic</b> (Estados Unidos): genera las recomendaciones con su modelo de IA a partir del resumen de tu biblioteca. Según sus condiciones para empresas, no usa estos datos para entrenar sus modelos.</li>
 <li><b>Google Books</b> (Google) y <b>Open Library</b> (Internet Archive): búsqueda de libros y portadas.</li>
-<li><b>RevenueCat</b> (Estados Unidos): gestión de la suscripción.</li></ul>
+<li><b>RevenueCat</b> (Estados Unidos): gestión de la suscripción.</li>
+<li><b>PostHog</b> (Estados Unidos): estadísticas anónimas de uso.</li></ul>
 <p>Cuando un proveedor está fuera del Espacio Económico Europeo, la transferencia se ampara en las cláusulas contractuales tipo de la Comisión Europea o en el Marco de Privacidad de Datos UE-EE. UU.</p>
 <h2>Cuánto tiempo se guardan</h2><p>Tus datos en el iPhone y en iCloud se guardan hasta que los borras. Nuestro servidor no guarda las peticiones de recomendaciones; solo lleva la cuenta de cuántas ha hecho cada instalación en el día y la borra al día siguiente. RevenueCat conserva el historial de compras mientras sea necesario para gestionar la suscripción y cumplir obligaciones legales.</p>
 <h2>Cómo borrar tus datos</h2><p>En Ajustes › Borrar todos mis datos se borra todo lo que la app tiene en tu iPhone y en tu iCloud. También puedes borrarlo desde los ajustes de iCloud de tu iPhone. La suscripción se cancela aparte, en los ajustes de tu cuenta de Apple.</p>
@@ -109,7 +111,7 @@ support:`<h1>Soporte</h1><p class="lead">¿Algo no funciona o tienes una duda? E
 <h3>¿Cómo borro todos mis datos?</h3><p>En la app: Ajustes › Borrar todos mis datos. Se borra lo que hay en tu iPhone y en tu iCloud.</p>
 <h3>No encuentro un libro</h3><p>Prueba a buscarlo por su ISBN o escanea el código de barras. Si aun así no aparece, escríbenos con el título y el autor.</p></div>`},
 
-en:{secs:{privacy:"Privacy",terms:"Terms",support:"Support"},upd:"Last updated: November 14, 2026",foot:`Underlye · ${OWNER} · Spain`,
+en:{secs:{privacy:"Privacy",terms:"Terms",support:"Support"},upd:"Last updated: November 24, 2026",foot:`Underlye · ${OWNER} · Spain`,
 privacy:`<h1>Privacy Policy</h1><p class="upd">{upd}</p>
 <p class="lead">Underlye has no user accounts and does not keep your data on its own servers. Your library, quotes, notes and sessions live on your iPhone and, if you use iCloud, in your iCloud account. Only a few specific pieces of data leave your phone, to search for books, recommend reads and manage your subscription, and they do not identify you.</p>
 <h2>Data controller</h2><p>${OWNER}, Spain. Contact: ${M}</p>
@@ -119,16 +121,18 @@ privacy:`<h1>Privacy Policy</h1><p class="upd">{upd}</p>
 <tr><td data-l="Data">What you type in search or the barcode you scan</td><td data-l="Where">Google Books and Open Library</td><td data-l="Why">To find the book and its cover</td></tr>
 <tr><td data-l="Data">For recommendations: your phone's language, what you look for in reading, the books you picked at the start, a summary of your library (title, author, status and rating, up to 60 books), the books you dismissed and an anonymous install ID</td><td data-l="Where">Our server on Supabase (Ireland), which forwards it to Anthropic and Google Books</td><td data-l="Why">To pick books for you and explain why you might like them. This is sent only if you turn recommendations on: the app asks you before the first one and you can turn them off at any time in Settings</td></tr>
 <tr><td data-l="Data">Purchases and subscription status, with an anonymous ID</td><td data-l="Where">Apple and RevenueCat</td><td data-l="Why">To know whether your subscription is active</td></tr>
+<tr><td data-l="Data">Anonymous usage statistics: which setup and subscription screens are viewed, the options picked during setup, and iPhone model, system version and language, with an anonymous ID</td><td data-l="Where">PostHog (United States)</td><td data-l="Why">To see where people drop off and improve the app</td></tr>
 </tbody></table>
 <p>We never send your name, quotes, notes or reflections to any server. The camera is used to scan barcodes and read text from a page; this is processed on your iPhone and no photos are uploaded. Reading reminders are local notifications on your phone.</p>
-<p>We use no advertising, analytics or tracking, and we do not sell your data. It is shared only with the providers listed below, and only for the purposes stated.</p>
-<h2>Legal basis</h2><p>We process this data because it is necessary to provide the service you subscribe to (Article 6(1)(b) GDPR). The anonymous install ID is also used to prevent abuse of recommendations, based on our legitimate interest in keeping the service running (Article 6(1)(f)).</p>
+<p>We use no advertising and no cross-app tracking, and we do not sell your data. We use PostHog for anonymous usage statistics (which screens are viewed and which options are picked during setup): no name, no email and nothing you write or save, and they are not linked to you. Your data is shared only with the providers listed below, and only for the purposes stated.</p>
+<h2>Legal basis</h2><p>We process this data because it is necessary to provide the service you subscribe to (Article 6(1)(b) GDPR). The anonymous install ID is also used to prevent abuse of recommendations, based on our legitimate interest in keeping the service running (Article 6(1)(f)). Anonymous usage statistics rely on our legitimate interest in improving the app (Article 6(1)(f)).</p>
 <h2>Service providers</h2><ul>
 <li><b>Apple:</b> iCloud (sync) and the App Store (payments).</li>
 <li><b>Supabase</b> (server in the EU, Ireland): receives the recommendation request and does not store it.</li>
 <li><b>Anthropic</b> (United States): generates recommendations with its AI model from your library summary. Under its commercial terms, it does not use this data to train its models.</li>
 <li><b>Google Books</b> (Google) and <b>Open Library</b> (Internet Archive): book search and covers.</li>
-<li><b>RevenueCat</b> (United States): subscription management.</li></ul>
+<li><b>RevenueCat</b> (United States): subscription management.</li>
+<li><b>PostHog</b> (United States): anonymous usage statistics.</li></ul>
 <p>Where a provider is outside the European Economic Area, transfers rely on the European Commission's Standard Contractual Clauses or the EU-U.S. Data Privacy Framework.</p>
 <h2>How long data is kept</h2><p>Data on your iPhone and in iCloud is kept until you delete it. Our server does not store recommendation requests; it only counts how many each install made that day and clears the count the next day. RevenueCat keeps purchase history as long as needed to manage the subscription and meet legal obligations.</p>
 <h2>Deleting your data</h2><p>Settings › Delete all my data removes everything the app has on your iPhone and in your iCloud. You can also delete it from your iPhone's iCloud settings. Your subscription is cancelled separately, in your Apple account settings.</p>
@@ -163,7 +167,7 @@ support:`<h1>Support</h1><p class="lead">Something not working, or have a questi
 <h3>How do I delete all my data?</h3><p>In the app: Settings › Delete all my data. This removes everything on your iPhone and in your iCloud.</p>
 <h3>I can't find a book</h3><p>Try searching by ISBN or scan the barcode. If it still doesn't appear, write to us with the title and author.</p></div>`},
 
-pt:{secs:{privacy:"Privacidade",terms:"Termos",support:"Suporte"},upd:"Última atualização: 14 de novembro de 2026",foot:`Underlye · ${OWNER} · Espanha`,
+pt:{secs:{privacy:"Privacidade",terms:"Termos",support:"Suporte"},upd:"Última atualização: 24 de novembro de 2026",foot:`Underlye · ${OWNER} · Espanha`,
 privacy:`<h1>Política de Privacidade</h1><p class="upd">{upd}</p>
 <p class="lead">O Underlye não tem contas de usuário nem guarda seus dados em servidores próprios. Sua biblioteca, citações, notas e sessões ficam no seu iPhone e, se você usa o iCloud, na sua conta do iCloud. Só saem do telefone alguns dados específicos para buscar livros, recomendar leituras e gerenciar sua assinatura, e eles não identificam você.</p>
 <h2>Controlador</h2><p>${OWNER}, Espanha. Contato: ${M}</p>
@@ -173,16 +177,18 @@ privacy:`<h1>Política de Privacidade</h1><p class="upd">{upd}</p>
 <tr><td data-l="Dados">O que você digita na busca ou o código de barras que escaneia</td><td data-l="Onde">Google Books e Open Library</td><td data-l="Para quê">Encontrar o livro e a capa</td></tr>
 <tr><td data-l="Dados">Para as indicações: idioma do telefone, o que você busca na leitura, os livros escolhidos no início, um resumo da sua biblioteca (título, autor, status e avaliação, até 60 livros), os livros descartados e um identificador anônimo de instalação</td><td data-l="Onde">Nosso servidor no Supabase (Irlanda), que os encaminha à Anthropic e ao Google Books</td><td data-l="Para quê">Escolher livros para você e explicar por que você pode gostar deles. Só são enviados se você ativar as indicações: o app pergunta antes da primeira e você pode desativá-las quando quiser em Ajustes</td></tr>
 <tr><td data-l="Dados">Compras e status da assinatura, com um identificador anônimo</td><td data-l="Onde">Apple e RevenueCat</td><td data-l="Para quê">Saber se sua assinatura está ativa</td></tr>
+<tr><td data-l="Dados">Estatísticas anônimas de uso: quais telas da configuração inicial e da assinatura são vistas, as opções escolhidas no início, e o modelo do iPhone, a versão do sistema e o idioma, com um identificador anônimo</td><td data-l="Onde">PostHog (Estados Unidos)</td><td data-l="Para quê">Saber em quais telas as pessoas param e melhorar o app</td></tr>
 </tbody></table>
 <p>Não enviamos seu nome, suas citações, notas ou reflexões a nenhum servidor. A câmera é usada para escanear códigos de barras e ler o texto de uma página; isso é processado no próprio iPhone e nenhuma foto é enviada. Os lembretes de leitura são notificações locais do telefone.</p>
-<p>Não usamos publicidade, análises nem rastreamento, e não vendemos seus dados. Eles são compartilhados apenas com os fornecedores da lista abaixo, e só para as finalidades indicadas.</p>
-<h2>Base legal</h2><p>Tratamos esses dados porque são necessários para prestar o serviço que você assina (artigo 6.1.b do RGPD). O identificador anônimo de instalação também serve para limitar o uso abusivo das indicações, com base no nosso interesse legítimo em manter o serviço (artigo 6.1.f). Para usuários no Brasil, aplicam-se também as bases equivalentes da LGPD.</p>
+<p>Não usamos publicidade nem rastreamento entre apps, e não vendemos seus dados. Usamos o PostHog para estatísticas anônimas de uso (quais telas são vistas e quais opções são escolhidas no início): sem seu nome, seu e-mail nem nada do que você escreve ou guarda, e sem vinculá-las a você. Seus dados só são compartilhados com os fornecedores da lista abaixo, e só para o que se indica.</p>
+<h2>Base legal</h2><p>Tratamos esses dados porque são necessários para prestar o serviço que você assina (artigo 6.1.b do RGPD). O identificador anônimo de instalação também serve para limitar o uso abusivo das indicações, com base no nosso interesse legítimo em manter o serviço (artigo 6.1.f). As estatísticas anônimas de uso se baseiam no nosso interesse legítimo em melhorar o app (artigo 6.1.f). Para usuários no Brasil, aplicam-se também as bases equivalentes da LGPD.</p>
 <h2>Fornecedores</h2><ul>
 <li><b>Apple:</b> iCloud (sincronização) e App Store (pagamentos).</li>
 <li><b>Supabase</b> (servidor na UE, Irlanda): recebe o pedido de indicações e não o guarda.</li>
 <li><b>Anthropic</b> (Estados Unidos): gera as indicações com seu modelo de IA a partir do resumo da sua biblioteca. Pelos termos comerciais, não usa esses dados para treinar seus modelos.</li>
 <li><b>Google Books</b> (Google) e <b>Open Library</b> (Internet Archive): busca de livros e capas.</li>
-<li><b>RevenueCat</b> (Estados Unidos): gestão da assinatura.</li></ul>
+<li><b>RevenueCat</b> (Estados Unidos): gestão da assinatura.</li>
+<li><b>PostHog</b> (Estados Unidos): estatísticas anônimas de uso.</li></ul>
 <p>Quando um fornecedor está fora do Espaço Econômico Europeu, a transferência se baseia nas cláusulas contratuais-padrão da Comissão Europeia ou no Quadro de Privacidade de Dados UE-EUA.</p>
 <h2>Por quanto tempo</h2><p>Os dados no iPhone e no iCloud ficam guardados até você apagá-los. Nosso servidor não guarda os pedidos de indicações; só conta quantos cada instalação fez no dia e apaga a contagem no dia seguinte. A RevenueCat guarda o histórico de compras pelo tempo necessário para gerenciar a assinatura e cumprir obrigações legais.</p>
 <h2>Como apagar seus dados</h2><p>Em Ajustes › Apagar todos os meus dados, o app apaga tudo o que tem no seu iPhone e no seu iCloud. Você também pode apagar pelos ajustes do iCloud do iPhone. A assinatura é cancelada à parte, nos ajustes da sua conta Apple.</p>
@@ -217,7 +223,7 @@ support:`<h1>Suporte</h1><p class="lead">Algo não funciona ou tem uma dúvida? 
 <h3>Como apago todos os meus dados?</h3><p>No app: Ajustes › Apagar todos os meus dados. Isso apaga tudo no iPhone e no iCloud.</p>
 <h3>Não encontro um livro</h3><p>Tente buscar pelo ISBN ou escaneie o código de barras. Se mesmo assim não aparecer, escreva para nós com título e autor.</p></div>`},
 
-fr:{secs:{privacy:"Confidentialité",terms:"Conditions",support:"Assistance"},upd:"Dernière mise à jour : 14 novembre 2026",foot:`Underlye · ${OWNER} · Espagne`,
+fr:{secs:{privacy:"Confidentialité",terms:"Conditions",support:"Assistance"},upd:"Dernière mise à jour : 24 novembre 2026",foot:`Underlye · ${OWNER} · Espagne`,
 privacy:`<h1>Politique de confidentialité</h1><p class="upd">{upd}</p>
 <p class="lead">Underlye n'a pas de comptes utilisateur et ne conserve pas vos données sur ses propres serveurs. Votre bibliothèque, vos citations, vos notes et vos sessions restent sur votre iPhone et, si vous utilisez iCloud, dans votre compte iCloud. Seules quelques données précises quittent le téléphone, pour rechercher des livres, vous recommander des lectures et gérer votre abonnement, et elles ne vous identifient pas.</p>
 <h2>Responsable du traitement</h2><p>${OWNER}, Espagne. Contact : ${M}</p>
@@ -227,16 +233,18 @@ privacy:`<h1>Politique de confidentialité</h1><p class="upd">{upd}</p>
 <tr><td data-l="Données">Ce que vous tapez dans la recherche ou le code-barres scanné</td><td data-l="Où">Google Books et Open Library</td><td data-l="Pourquoi">Trouver le livre et sa couverture</td></tr>
 <tr><td data-l="Données">Pour les suggestions : langue du téléphone, ce que vous cherchez dans la lecture, les livres choisis au début, un résumé de votre bibliothèque (titre, auteur, statut et note, jusqu'à 60 livres), les livres écartés et un identifiant d'installation anonyme</td><td data-l="Où">Notre serveur sur Supabase (Irlande), qui les transmet à Anthropic et à Google Books</td><td data-l="Pourquoi">Choisir des livres pour vous et expliquer pourquoi ils pourraient vous plaire. Ces données ne sont envoyées que si vous activez les suggestions : l'app vous le demande avant la première et vous pouvez les désactiver à tout moment dans Réglages</td></tr>
 <tr><td data-l="Données">Achats et statut de l'abonnement, avec un identifiant anonyme</td><td data-l="Où">Apple et RevenueCat</td><td data-l="Pourquoi">Savoir si votre abonnement est actif</td></tr>
+<tr><td data-l="Données">Statistiques d'utilisation anonymes : quels écrans de la configuration initiale et de l'abonnement sont vus, les options choisies au démarrage, ainsi que le modèle d'iPhone, la version du système et la langue, avec un identifiant anonyme</td><td data-l="Où">PostHog (États-Unis)</td><td data-l="Pourquoi">Savoir où les gens s'arrêtent et améliorer l'app</td></tr>
 </tbody></table>
 <p>Nous n'envoyons jamais votre nom, vos citations, vos notes ou vos réflexions à un serveur. L'appareil photo sert à scanner des codes-barres et à lire le texte d'une page ; le traitement se fait sur l'iPhone et aucune photo n'est envoyée. Les rappels de lecture sont des notifications locales du téléphone.</p>
-<p>Nous n'utilisons ni publicité, ni outils d'analyse, ni pistage, et nous ne vendons pas vos données. Elles ne sont partagées qu'avec les prestataires listés ci-dessous, et uniquement pour les finalités indiquées.</p>
-<h2>Base légale</h2><p>Nous traitons ces données car elles sont nécessaires pour fournir le service auquel vous êtes abonné (article 6.1.b du RGPD). L'identifiant d'installation anonyme sert aussi à limiter l'usage abusif des suggestions, sur la base de notre intérêt légitime à maintenir le service (article 6.1.f).</p>
+<p>Nous n'utilisons ni publicité ni pistage entre applications, et nous ne vendons pas vos données. Nous utilisons PostHog pour des statistiques d'utilisation anonymes (quels écrans sont vus et quelles options sont choisies au démarrage) : sans votre nom, votre e-mail ni rien de ce que vous écrivez ou enregistrez, et sans les relier à vous. Vos données ne sont partagées qu'avec les prestataires listés ci-dessous, et uniquement pour les finalités indiquées.</p>
+<h2>Base légale</h2><p>Nous traitons ces données car elles sont nécessaires pour fournir le service auquel vous êtes abonné (article 6.1.b du RGPD). L'identifiant d'installation anonyme sert aussi à limiter l'usage abusif des suggestions, sur la base de notre intérêt légitime à maintenir le service (article 6.1.f). Les statistiques d'utilisation anonymes reposent sur notre intérêt légitime à améliorer l'app (article 6.1.f).</p>
 <h2>Prestataires</h2><ul>
 <li><b>Apple :</b> iCloud (synchronisation) et App Store (paiements).</li>
 <li><b>Supabase</b> (serveur dans l'UE, Irlande) : reçoit la demande de suggestions et ne la conserve pas.</li>
 <li><b>Anthropic</b> (États-Unis) : génère les suggestions avec son modèle d'IA à partir du résumé de votre bibliothèque. Selon ses conditions commerciales, ces données ne servent pas à entraîner ses modèles.</li>
 <li><b>Google Books</b> (Google) et <b>Open Library</b> (Internet Archive) : recherche de livres et couvertures.</li>
-<li><b>RevenueCat</b> (États-Unis) : gestion de l'abonnement.</li></ul>
+<li><b>RevenueCat</b> (États-Unis) : gestion de l'abonnement.</li>
+<li><b>PostHog</b> (États-Unis) : statistiques d'utilisation anonymes.</li></ul>
 <p>Lorsqu'un prestataire est situé hors de l'Espace économique européen, le transfert repose sur les clauses contractuelles types de la Commission européenne ou sur le cadre de protection des données UE-États-Unis.</p>
 <h2>Durée de conservation</h2><p>Les données sur votre iPhone et dans iCloud sont conservées jusqu'à ce que vous les supprimiez. Notre serveur ne conserve pas les demandes de suggestions ; il compte seulement combien chaque installation en a fait dans la journée et efface ce compteur le lendemain. RevenueCat conserve l'historique d'achats le temps nécessaire à la gestion de l'abonnement et au respect des obligations légales.</p>
 <h2>Supprimer vos données</h2><p>Dans Réglages › Supprimer toutes mes données, l'app efface tout ce qu'elle a sur votre iPhone et dans votre iCloud. Vous pouvez aussi le faire depuis les réglages iCloud de l'iPhone. L'abonnement se résilie séparément, dans les réglages de votre compte Apple.</p>
